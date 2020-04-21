@@ -33,7 +33,7 @@ public class Contrato {
 	@Temporal(value = TemporalType.DATE)
 	private Calendar dataAbertura;
 	
-	@Column(name = "dataAbertura", nullable = false)
+	@Column(name = "dataFechamento", nullable = false)
 	@Temporal(value = TemporalType.DATE)
 	private Calendar dataFechamento;
 	

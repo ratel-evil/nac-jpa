@@ -1,5 +1,7 @@
 package br.com.fiap.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -33,9 +36,13 @@ public class Usuario {
 	@Column(name = "email", nullable = false, length = 100)
 	private String email;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idEndereco")
-	private Endereco endereco;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+		name = "Usuario_Endereco",
+		joinColumns = @JoinColumn(name ="idUsuario"),
+		inverseJoinColumns = @JoinColumn(name = "idEndereco")
+	)
+	private List<Endereco> endereco;
 	
 	public int getId() {
 		return id;
@@ -76,12 +83,12 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public Endereco getEndereco() {
+
+	public List<Endereco> getEndereco() {
 		return endereco;
 	}
-	
-	public void setEndereco(Endereco endereco) {
+
+	public void setEndereco(List<Endereco> endereco) {
 		this.endereco = endereco;
 	}
 }
