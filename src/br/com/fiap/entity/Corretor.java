@@ -37,11 +37,11 @@ public class Corretor {
 	@Column(name = "email", nullable = false, length = 100)
 	private String email;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idCorretora")
 	private Corretora corretora;
 	
-	@OneToMany(mappedBy="corretor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="corretor", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	private List<Contrato> contratos;
 	
 	public int getId() {

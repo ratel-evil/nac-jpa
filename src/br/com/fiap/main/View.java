@@ -12,6 +12,7 @@ import javax.persistence.Persistence;
 import br.com.fiap.dao.ContratoDAO;
 import br.com.fiap.dao.enums.TipoContrato;
 import br.com.fiap.dao.enums.TipoImovel;
+import br.com.fiap.dao.enums.TipoLogradouro;
 import br.com.fiap.dao.impl.ContratoDAOImpl;
 import br.com.fiap.entity.Contrato;
 import br.com.fiap.entity.Corretor;
@@ -40,6 +41,7 @@ public class View {
 		endereco.setLogradouro("Rua");
 		endereco.setNumero(666);
 		endereco.setUf("SP");
+		endereco.setTipo(TipoLogradouro.RUA);
 		
 		Usuario usuario = new Usuario();
 		usuario.setCpf("45304464548");
