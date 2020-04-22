@@ -36,7 +36,7 @@
 			<artifactId>jdbc-driver</artifactId>
 			<version>12</version>
 			<scope>system</scope>
-			<systemPath>C:/Users/caroline.muniz/Documents/OpenSource/ojdbc8.jar</systemPath>
+			<systemPath>C:/Users/Italo/Downloads/ojdbc6.jar</systemPath>
 		</dependency>
    </dependencies>
 </project>
