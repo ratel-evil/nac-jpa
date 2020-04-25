@@ -20,12 +20,13 @@ import br.com.fiap.entity.Corretora;
 import br.com.fiap.entity.Endereco;
 import br.com.fiap.entity.Imovel;
 import br.com.fiap.entity.Usuario;
+import br.com.fiap.singleton.EntityMFSingleton;
 
 public class View {
 
 	
 	public static void main(String[] args) {
-		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("oracle");
+		EntityManagerFactory fabrica = EntityMFSingleton.getInstance(); 
 		EntityManager em = fabrica.createEntityManager();
 		
 		
@@ -45,8 +46,8 @@ public class View {
 		
 		Usuario usuario = new Usuario();
 		usuario.setCpf("45304464548");
-		usuario.setEmail("ratelevil@gmail.com");
-		usuario.setNome("Ratel");
+		usuario.setEmail("thyago@gmail.com");
+		usuario.setNome("Thyago");
 		usuario.setTelefone("119658014456");
 		
 		List<Endereco> enderecos = new ArrayList<Endereco>();
